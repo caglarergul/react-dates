@@ -773,7 +773,7 @@ describe('DayPickerSingleDateController', () => {
         currentMonth: today,
       });
       wrapper.instance().onNextMonthClick();
-      expect(wrapper.state().currentMonth.month()).to.equal(today.month() + 1);
+      expect(wrapper.state().currentMonth.month()).to.equal((today.month() + 1) % 12);
     });
 
     it('new visibleDays has next month', () => {
